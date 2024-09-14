@@ -1,0 +1,41 @@
+services:
+  uv:
+    build:
+      context: .
+      dockerfile: DockerFile
+    restart: always
+    tty: true
+    volumes:
+      - ./:/workspace
+      # - ds224:/mnt/ds224
+      - /mnt/t:/mnt/t
+      - /mnt/u:/mnt/u
+      - /mnt/v:/mnt/v
+      - /mnt/w:/mnt/w
+      - /mnt/x:/mnt/x
+      - /mnt/y:/mnt/y
+      - /mnt/z:/mnt/z
+      # - ds224/dataset:/mnt/t
+      # - ds224/ProgramFiles:/mnt/u
+      # - ds224/photo:/mnt/v
+      # - ds224/docker:/mnt/w
+      # - ds224/media:/mnt/x
+      # - ds224/video:/mnt/y
+      # - ds224/home:/mnt/z
+    ports:
+      - '8000:8000'
+      - "6006:6006"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+
+# volumes:
+#   ds224:
+#     driver_opts:
+#       type: cifs
+#       o: "username=manjufox5656,password=T@nuki4747"
+#       device: "//192.168.0.47/"
+  

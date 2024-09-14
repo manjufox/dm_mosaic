@@ -1,0 +1,7 @@
+\\\\ds224\\dataset /mnt/t drvfs defaults 0 0
+"\\\\ds224\\Program Files" /mnt/u drvfs defaults 0 0
+"\\\\ds224\\photo" /mnt/v drvfs defaults 0 0
+"\\\\ds224\\docker" /mnt/w drvfs defaults 0 0
+"\\\\ds224\\media" /mnt/x drvfs defaults 0 0
+"\\\\ds224\\video" /mnt/y drvfs defaults 0 0
+"\\\\ds224\\home" /mnt/z drvfs defaults 0 0

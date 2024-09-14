@@ -1,0 +1,27 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting transformer_engine
+  Downloading transformer_engine-1.9.0.post1-py3-none-any.whl.metadata (16 kB)
+Collecting transformer-engine-cu12==1.9.0 (from transformer_engine)
+  Downloading transformer_engine_cu12-1.9.0-py3-none-manylinux_2_28_x86_64.whl.metadata (841 bytes)
+Collecting pydantic (from transformer-engine-cu12==1.9.0->transformer_engine)
+  Downloading pydantic-2.8.2-py3-none-any.whl.metadata (125 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.2/125.2 kB 6.3 MB/s eta 0:00:00
+Requirement already satisfied: importlib-metadata>=1.0 in /home/user/.local/lib/python3.12/site-packages (from transformer-engine-cu12==1.9.0->transformer_engine) (8.4.0)
+Requirement already satisfied: packaging in /home/user/.local/lib/python3.12/site-packages (from transformer-engine-cu12==1.9.0->transformer_engine) (24.1)
+Requirement already satisfied: zipp>=0.5 in /home/user/.local/lib/python3.12/site-packages (from importlib-metadata>=1.0->transformer-engine-cu12==1.9.0->transformer_engine) (3.20.1)
+Collecting annotated-types>=0.4.0 (from pydantic->transformer-engine-cu12==1.9.0->transformer_engine)
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.20.1 (from pydantic->transformer-engine-cu12==1.9.0->transformer_engine)
+  Downloading pydantic_core-2.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Requirement already satisfied: typing-extensions>=4.6.1 in /usr/lib/python3/dist-packages (from pydantic->transformer-engine-cu12==1.9.0->transformer_engine) (4.10.0)
+Downloading transformer_engine-1.9.0.post1-py3-none-any.whl (375 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 376.0/376.0 kB 12.9 MB/s eta 0:00:00
+Downloading transformer_engine_cu12-1.9.0-py3-none-manylinux_2_28_x86_64.whl (119.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.0/119.0 MB 19.6 MB/s eta 0:00:00
+Downloading pydantic-2.8.2-py3-none-any.whl (423 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 423.9/423.9 kB 27.2 MB/s eta 0:00:00
+Downloading pydantic_core-2.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 43.2 MB/s eta 0:00:00
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Installing collected packages: pydantic-core, annotated-types, pydantic, transformer-engine-cu12, transformer_engine
+Successfully installed annotated-types-0.7.0 pydantic-2.8.2 pydantic-core-2.20.1 transformer-engine-cu12-1.9.0 transformer_engine-1.9.0.post1

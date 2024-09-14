@@ -1,0 +1,46 @@
+FROM  nvcr.io/nvidia/pytorch:24.08-py3
+
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    git \
+    libatlas-base-dev \
+    libblas-dev \
+    liblapack-dev \
+    gfortran 
+
+
+# WORKDIR /opt
+
+# The installer requires curl (and certificates) to download the release archive
+# hadolint ignore=DL3008
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        ca-certificates \
+        curl
+
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+ENV PATH="/root/.cargo/bin/:$PATH"
+RUN export UV_LINK_MODE=copy
+ADD . /home/workspace
+WORKDIR /home/workspace
+
+# RUN uv sync --dev
+# RUN uv venv
+# ENV VIRTUAL_ENV=/workspace/.venv
+# ENV PATH="/workspace/.venv/bin:$PATH"
+# COPY requirements.txt .
+RUN pip install -r /workspace/requirements.txt
+RUN pip install -U timm
+# RUN pip install -U torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+# pip install -U segmentation_models_pytorch
+# RUN pip install -U xformers --index-url https://download.pytorch.org/whl/cu124
+# RUN git clone https://github.com/NVIDIA/apex /workspace/apex
+# WORKDIR /workspace/apex
+# RUN pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings --build-option=--cpp_ext --config-settings --build-option=--cuda_ext ./
+# WORKDIR /workspace
+# RUN uv pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" apex
+
+# RUN mkdir /mnt/ds224 && mkdir /mnt/t && mkdir /mnt/u && mkdir /mnt/v && mkdir /mnt/w && mkdir /mnt/x && mkdir /mnt/y && mkdir /mnt/z
+

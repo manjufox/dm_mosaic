@@ -1,0 +1,66 @@
+{
+    "name": "uv",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "uv",
+    "build": {
+        "context": "..",
+        "dockerfile": "DockerFile"
+    },
+    "features": {
+        "ghcr.io/dhoeric/features/hadolint:1": {}
+    },
+    "customizations": {
+        "cursor": {
+            "extensions": [
+                "charliermarsh.ruff",
+                "codezombiech.gitignore",
+                "eamodio.gitlens",
+                "exiasr.hadolint",
+                "kevinrose.vsc-python-indent",
+                "mosapride.zenkaku",
+                "ms-azuretools.vscode-docker",
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "oderwat.indent-rainbow",
+                "pkief.material-icon-theme",
+                "shardulm94.trailing-spaces",
+                "usernamehw.errorlens",
+                "yzhang.markdown-all-in-one"
+            ],
+            "settings": {
+                // "python.defaultInterpreterPath": "/root/.local/share/uv/python",
+                "[python]": {
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll.ruff": "explicit",
+                        "source.organizeImports.ruff": "explicit"
+                    },
+                    "editor.formatOnSave": true
+                },
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true,
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/bin/zsh"
+                    }
+                }
+            }
+        }
+    },
+    "remoteUser": "root",
+    // "postCreateCommand": "groupadd -g 1000 cursor && useradd -m -u 1000 -g cursor -s /bin/bash cursor",
+    // "postCreateCommand": "chown -R "
+    "runArgs": ["--gpus", "all","--shm-size","24gb"],
+    // "remoteUser":"cursor",
+    "mounts": [
+        // "source=////192.168.0.47/dataset,target=/mnt/t,type=bind,consistency=cached",
+        // "source=////192.168.0.47/ProbramFiles,target=/mnt/u,type=bind,consistency=cached",
+        // "source=////192.168.0.47/photo,target=/mnt/v,type=bind,consistency=cached",
+        // "source=////192.168.0.47/docker,target=/mnt/w,type=bind,consistency=cached",
+        // "source=////192.168.0.47/media,target=/mnt/x,type=bind,consistency=cached",
+        // "source=////192.168.0.47/video,target=/mnt/y,type=bind,consistency=cached",
+        // "source=////192.168.0.47/home,target=/mnt/z,type=bind,consistency=cached",
+        "source=//192.168.0.47/,target=/mnt/ds224,type=bind,consistency=cached",
+    ],
+}
